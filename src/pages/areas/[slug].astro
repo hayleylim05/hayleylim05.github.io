@@ -1,0 +1,32 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import { AREAS } from "../../data/areas";
+
+export function getStaticPaths() {
+  return AREAS.map((area) => ({ params: { slug: area.slug }, props: { area } }));
+}
+
+const { area } = Astro.props;
+---
+
+<BaseLayout title={area.title} description={area.summary} sideBarActiveItemID="projects">
+  <a href="/projects" class="link link-hover text-sm opacity-70">← All areas</a>
+  <div class="text-4xl font-bold mt-3 mb-3">{area.title}</div>
+  <p class="text-lg mb-8">{area.intro}</p>
+
+  {area.projects.map((p) => (
+    <>
+      <div class="py-5">
+        <h2 class="text-xl font-bold">
+          {p.link ? <a href={p.link} target="_blank" class="link link-hover">{p.title} ↗</a> : p.title}
+          {p.badge && <span class="badge badge-secondary mx-2 align-middle">{p.badge}</span>}
+        </h2>
+        {(p.period || p.role) && (
+          <div class="text-sm opacity-70 mt-1">{[p.role, p.period].filter(Boolean).join(" · ")}</div>
+        )}
+        <p class="mt-2">{p.desc}</p>
+      </div>
+      <div class="divider my-0" />
+    </>
+  ))}
+</BaseLayout>
