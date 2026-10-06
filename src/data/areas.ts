@@ -31,9 +31,9 @@ export type Area = {
 export const AREAS: Area[] = [
   {
     slug: "lab-work",
-    title: "Lab Work",
+    title: "Experimental Work",
     summary: "Experimental research in the life sciences.",
-    intro: "Write a short paragraph about your wet-lab experience: the labs you have worked in, the questions you studied and the techniques you used.",
+    intro: "While experimental biology is not my primary field of expertist, I have a significant amount of hands-on research, particularly in the field of synthetic biology.",
     projects: [
       {
         title: "Project title",
@@ -43,9 +43,9 @@ export const AREAS: Area[] = [
         badge: "ONGOING",
       },
       {
-        title: "Another project",
-        period: "2025",
-        desc: "One or two sentences on this project.",
+        title: "Building a Biosensor to Detect Changes in Metabolite in the Environment",
+        period: "2024",
+        desc: "I used BioBrick parts and molecular biology techniques to successfully create a genetic circuit that was inserted into E. coli cells to act as a device for us to detect changes in arabinose in the environment. Techniques used: PCR, gel electrophoresis, molecular cloning.",
       },
     ],
   },
