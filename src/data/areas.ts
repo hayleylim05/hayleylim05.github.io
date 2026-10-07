@@ -6,9 +6,15 @@
 // Tips:
 // - Wrap text in double quotes "..." (safe for apostrophes like I'm).
 // - Every project needs a comma after its closing }.
-// - "link", "badge", "skills" and "img" are optional. Delete the line if unused.
+// - "links", "badge", "skills" and "img" are optional. Delete the line if unused.
 // - "skills" is a list: ["PCR", "Gel electrophoresis"]. It shows under the
 //   project with the heading set by that area's "skillsLabel".
+// - "links" is a list of buttons shown under the project:
+//     links: [
+//       { label: "Paper", url: "https://doi.org/..." },
+//       { label: "Poster (PDF)", url: "/files/poster.pdf" },
+//     ],
+//   For your own PDFs, upload them to public/files/ and use "/files/name.pdf".
 // - Images go in the /public folder, e.g. img: "/lab.jpg"
 // ─────────────────────────────────────────────────────────────
 
@@ -17,7 +23,7 @@ export type Project = {
   period?: string;   // e.g. "Jan 2026 – Present"
   role?: string;     // e.g. "Undergraduate Researcher, XYZ Lab"
   desc: string;
-  link?: string;     // paper, poster, GitHub repo, essay PDF...
+  links?: { label: string; url: string }[]; // paper, poster, GitHub repo, essay PDF...
   badge?: string;    // small label, e.g. "ONGOING" or "PUBLISHED"
   skills?: string[]; // techniques / tech stack, e.g. ["PCR", "Molecular cloning"]
 };
@@ -67,7 +73,9 @@ export const AREAS: Area[] = [
         title: "Project title",
         period: "2026",
         desc: "One or two sentences on the model or analysis you built and what it showed.",
-        link: "https://github.com/hayleylim05",
+        links: [
+          { label: "GitHub", url: "https://github.com/hayleylim05" },
+        ],
         skills: ["Python", "NumPy", "pandas"],
       },
     ],
