@@ -1,3 +1,88 @@
-.time-line-container>div:last-child .education__time>.education__line {
-    display: none;
+/* ── Site theme ──────────────────────────────────────────────
+   Change the colours here to restyle the whole site. */
+:root {
+  --accent: #1f7f78;        /* main teal */
+  --accent-dark: #17635d;
+  --accent-tint: #eff7f6;   /* pale teal background */
+  --ink: #1d1d1f;           /* headings */
+  --text: #3c3c43;          /* body text */
+  --muted: #6e6e73;         /* secondary text */
+  --card: #fafafa;
+  --line: #e7e7e7;
 }
+
+html { scroll-behavior: smooth; }
+body {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  color: var(--text);
+  background: #fff;
+  -webkit-font-smoothing: antialiased;
+}
+
+.hw-container { max-width: 1080px; margin-left: auto; margin-right: auto; padding-left: 20px; padding-right: 20px; }
+.hw-section { padding: 56px 0; }
+
+.hw-eyebrow {
+  display: inline-block;
+  font-size: 0.72rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase;
+  color: var(--accent);
+}
+.hw-badge {
+  display: inline-flex; align-items: center; gap: 8px;
+  background: var(--accent-tint); color: var(--accent);
+  font-size: 0.8rem; font-weight: 700; padding: 6px 14px; border-radius: 999px;
+}
+.hw-title { color: var(--ink); font-weight: 700; letter-spacing: -0.025em; line-height: 1.1; }
+.hw-h1 { font-size: clamp(2.1rem, 5vw, 3.2rem); }
+.hw-h2 { font-size: clamp(1.6rem, 3.5vw, 2.1rem); margin-top: 6px; }
+.hw-lead { font-size: 1.08rem; line-height: 1.65; color: var(--muted); }
+
+.hw-btn {
+  display: inline-flex; align-items: center; gap: 8px;
+  font-weight: 700; font-size: 0.92rem; padding: 12px 20px; border-radius: 12px;
+  border: 1px solid transparent; transition: background .15s, border-color .15s, color .15s;
+}
+.hw-btn-primary { background: var(--accent); color: #fff; }
+.hw-btn-primary:hover { background: var(--accent-dark); }
+.hw-btn-secondary { background: #fff; color: var(--ink); border-color: var(--line); }
+.hw-btn-secondary:hover { border-color: var(--accent); color: var(--accent); }
+.hw-btn-light { background: #fff; color: var(--accent); }
+.hw-btn-light:hover { background: var(--accent-tint); }
+.hw-btn-outline-light { color: #fff; border-color: rgba(255,255,255,.55); }
+.hw-btn-outline-light:hover { background: rgba(255,255,255,.12); }
+.hw-btn-sm { font-size: 0.82rem; padding: 7px 13px; border-radius: 10px; }
+
+.hw-card {
+  display: flex; flex-direction: column; gap: 10px;
+  background: var(--card); border: 1px solid var(--line); border-radius: 14px; padding: 24px;
+  transition: border-color .15s, box-shadow .15s, transform .15s;
+}
+a.hw-card:hover { border-color: var(--accent); box-shadow: 0 8px 24px rgba(31,127,120,.10); transform: translateY(-2px); }
+.hw-icon {
+  width: 44px; height: 44px; border-radius: 12px; display: grid; place-items: center;
+  background: var(--accent-tint); color: var(--accent);
+}
+.hw-card-title { color: var(--ink); font-weight: 700; font-size: 1.12rem; letter-spacing: -0.01em; }
+.hw-card-desc { color: var(--muted); line-height: 1.55; }
+.hw-card-link { color: var(--accent); font-weight: 700; font-size: 0.9rem; margin-top: auto; }
+
+.hw-chip {
+  display: inline-block; font-size: 0.8rem; padding: 4px 10px; border-radius: 999px;
+  background: #fff; border: 1px solid var(--line); color: var(--text);
+}
+.hw-label {
+  display: inline-block; font-size: 0.68rem; font-weight: 700; letter-spacing: .06em; text-transform: uppercase;
+  background: var(--accent); color: #fff; padding: 3px 9px; border-radius: 999px; vertical-align: middle;
+}
+
+.hw-cta { background: var(--accent); color: #fff; border-radius: 22px; padding: 40px; }
+.hw-cta .hw-eyebrow { color: rgba(255,255,255,.75); }
+
+/* Project description: paragraphs + bullet points */
+.hw-desc p { margin: 0 0 0.6rem; line-height: 1.65; }
+.hw-desc ul { list-style: disc; padding-left: 1.3rem; margin: 0 0 0.6rem; }
+.hw-desc li { margin: 0.2rem 0; line-height: 1.6; }
+.hw-desc li::marker { color: var(--accent); }
+
+/* CV timeline (from the template) */
+.time-line-container>div:last-child .education__time>.education__line { display: none; }

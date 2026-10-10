@@ -1,0 +1,16 @@
+---
+import AreaIcon from "./AreaIcon.astro";
+import { AREAS } from "../data/areas";
+---
+<div class="grid gap-5 md:grid-cols-3 mt-8">
+  {AREAS.map((area) => (
+    <a href={"/areas/" + area.slug} class="hw-card">
+      <AreaIcon name={area.icon} />
+      <div class="hw-card-title mt-2">{area.title}</div>
+      <p class="hw-card-desc">{area.summary}</p>
+      <span class="hw-card-link">
+        Explore {area.projects.length} {area.projects.length === 1 ? "project" : "projects"} →
+      </span>
+    </a>
+  ))}
+</div>

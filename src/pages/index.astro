@@ -1,66 +1,77 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
-import HorizontalCard from "../components/HorizontalCard.astro";
-import { getCollection } from "astro:content";
-import createSlug from "../lib/createSlug"
-import { AREAS } from "../data/areas";
-
-const posts = (await getCollection("blog")).sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
-
-const last_posts = posts.slice(0, 3);
+import AreaGrid from "../components/AreaGrid.astro";
+import { CONTACT } from "../config";
 ---
 
-<BaseLayout sideBarActiveItemID="home">
-  <div class="pb-12 mt-5">
-    <div class="text-xl py-1">Hey there 👋</div>
-    <div class="text-5xl font-bold">I'm Hayley Lim,</div>
-    <div class="text-3xl py-3 font-bold">an aspiring academic</div>
-    <div class="py-2">
-      <text class="text-lg">
-        Welcome to my Personal Portfolio. I am an Undergraduate Researcher majoring in Life Sciences with a minor in Philosophy. I'm inspired by the founding thinkers who 
-        were philosophers, scientists/mathematicans and theologians all at the same time. The concepts and theories they have produced is a testament to the advantage of having a multi-displinary background. Under
-        the sciences, I specialise in Computational Research and under philosophy, metaphysics. I deeply enjoy the process of using classical logic to build models and craft philosophical arguments. I aspire to further 
-        knowledge and make better sense of the world we live in. 
-      </text>
+<BaseLayout sideBarActiveItemID="home" wide>
+  <!-- HERO -->
+  <section class="hw-container pt-14 pb-10 md:pt-20">
+    <div class="grid md:grid-cols-[1.4fr_1fr] gap-10 items-center">
+      <div>
+        <span class="hw-badge">Undergraduate Researcher · Life Sciences &amp; Philosophy</span>
+        <h1 class="hw-title hw-h1 mt-5">Hi, I'm Hayley Lim</h1>
+        <p class="hw-lead mt-4 max-w-xl">
+          An aspiring academic working at the meeting point of computational biology and metaphysics.
+        </p>
+        <div class="flex flex-wrap gap-3 mt-7">
+          <a href="#areas" class="hw-btn hw-btn-primary">Explore my work</a>
+          <a href="/cv" class="hw-btn hw-btn-secondary">View CV</a>
+        </div>
+      </div>
+      <div class="flex justify-center md:justify-end">
+        <div class="relative">
+          <div class="absolute -inset-4 rounded-[40px] rotate-6" style="background: var(--accent-tint)"></div>
+          <img src="/profile.jpg" alt="Hayley Lim" width="300" height="300"
+            class="relative w-56 h-56 md:w-72 md:h-72 object-cover rounded-[32px]" />
+        </div>
+      </div>
     </div>
-  </div>
+  </section>
 
-  <div>
-    <div class="text-3xl w-full font-bold mb-2">Areas of Work</div>
-  </div>
+  <!-- ABOUT -->
+  <section class="hw-section" style="background: var(--card)">
+    <div class="hw-container">
+      <span class="hw-eyebrow">About me</span>
+      <h2 class="hw-title hw-h2">Science and philosophy, side by side</h2>
+      <div class="mt-5 max-w-3xl text-[1.02rem] leading-relaxed space-y-4">
+        <p>
+          I am an Undergraduate Researcher majoring in Life Sciences with a minor in Philosophy. I'm inspired by the
+          founding thinkers who were philosophers, scientists, mathematicians and theologians all at the same time. The
+          concepts and theories they produced are a testament to the advantage of a multidisciplinary background.
+        </p>
+        <p>
+          Within the sciences, I specialise in computational research; within philosophy, metaphysics. I deeply enjoy
+          using classical logic to build models and craft philosophical arguments, and I hope to further knowledge and
+          make better sense of the world we live in.
+        </p>
+      </div>
+    </div>
+  </section>
 
-  {
-    AREAS.map((area) => (
-      <>
-        <HorizontalCard
-          title={area.title}
-          img={area.img}
-          desc={area.summary}
-          url={"/areas/" + area.slug}
-          target="_self"
-        />
-        <div class="divider my-0" />
-      </>
-    ))
-  }
+  <!-- AREAS -->
+  <section id="areas" class="hw-section">
+    <div class="hw-container">
+      <span class="hw-eyebrow">My work</span>
+      <h2 class="hw-title hw-h2">Areas of Work</h2>
+      <p class="hw-lead mt-3 max-w-2xl">Research and projects across the lab, the computer and the seminar room.</p>
+      <AreaGrid />
+    </div>
+  </section>
 
-  <div>
-    <div class="text-3xl w-full font-bold mb-5 mt-10">Latest from blog</div>
-  </div>
-
-  {
-    last_posts.map((post) => (
-      <>
-        <HorizontalCard
-          title={post.data.title}
-          img={post.data.heroImage}
-          desc={post.data.description}
-          url={"/blog/" + createSlug(post.data.title, post.slug)}
-          target="_self"
-          badge={post.data.badge}
-        />
-        <div class="divider my-0" />
-      </>
-    ))
-  }
+  <!-- CONTACT CTA -->
+  <section id="contact" class="hw-container pb-16">
+    <div class="hw-cta flex flex-col md:flex-row md:items-center md:justify-between gap-6">
+      <div>
+        <span class="hw-eyebrow">Get in touch</span>
+        <h2 class="text-2xl md:text-3xl font-bold tracking-tight mt-2">Let's connect</h2>
+        <p class="mt-2 opacity-90 max-w-lg">Interested in my research or a possible collaboration? I'd love to hear from you.</p>
+      </div>
+      <div class="flex flex-wrap gap-3">
+        {CONTACT.email && <a href={`mailto:${CONTACT.email}`} class="hw-btn hw-btn-light">Email me</a>}
+        {CONTACT.linkedin && <a href={CONTACT.linkedin} target="_blank" class="hw-btn hw-btn-outline-light">LinkedIn</a>}
+        {CONTACT.github && <a href={CONTACT.github} target="_blank" class="hw-btn hw-btn-outline-light">GitHub</a>}
+      </div>
+    </div>
+  </section>
 </BaseLayout>
