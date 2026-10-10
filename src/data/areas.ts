@@ -102,6 +102,16 @@ export const AREAS: Area[] = [
         skills: ["Python", "NumPy", "pandas"],
       },
       {
+        title: "Web Portal for Church Ministries",
+        period: "May 2026 - July 2026",
+        role: "Web Developer, Church of Singapore",
+        desc: "Interned",
+        links: [
+          {label: "Github", url:"https://github.com/hayleylim05/Ministry-Portal"}
+          ],
+        skills: ["UI/UX Design","Flask", "Python", "HTML", "CSS"],
+      },
+      {
         title: "Investigation of Different Fragmentation Methods for Drug Database Preparation",
         period: "June 2022 - June 2023",
         role: "Student Researcher, Bioinformatics Institute @ ASTAR",
