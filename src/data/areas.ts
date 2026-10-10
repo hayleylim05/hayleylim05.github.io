@@ -86,6 +86,16 @@ export const AREAS: Area[] = [
         ],
         skills: ["Python", "NumPy", "pandas"],
       },
+      {
+        title: "Investigation of Different Fragmentation Methods for Drug Database Preparation",
+        period: "June 2022-June 2023",
+        role: "Student Researcher, Bioinformatics Institute @ ASTAR",
+        desc: "description",
+        links: [
+          {label: "GitHub", url:"https://github.com/hayleylim05"},{label: "Paper", "url:"https://link.springer.com/chapter/10.1007/978-981-99-8369-8_32?"},
+        ],
+        skills: ["Python"],
+      },
     ],
   },
   {
