@@ -54,7 +54,7 @@ export const AREAS: Area[] = [
     icon: "flask",
     summary: "Experimental research in the life sciences.",
     skillsLabel: "Techniques",
-    intro: "While experimental biology is not my primary field of expertise, I have a significant amount of hands-on research, particularly in the field of synthetic biology.",
+    intro: "While experimental biology is not my primary field of expertise, I have a significant amount of hands-on research, particularly in the field of synthetic biology, where Boolean logic meets genetics.",
     projects: [
       {
         title: "Project title",
@@ -69,10 +69,10 @@ export const AREAS: Area[] = [
         period: "2025",
         role: "Undergraduate Student Researcher, Department of Microbiology, Yong Loo Lin School of Medicine",
         desc: `I used mouse RNA to carry out molecular cloning of the LDHA gene, followed by expression of the LDHA protein.
-- Isolated mouse RNA, converted it into cDNA and amplified the LDHA gene
-- Cut the gene with restriction enzymes, ligated it into a pET11-H6a plasmid vector and transformed it into competent DH5α cells for screening
-- Transformed the H6-MmLDHA construct into BL21(DE3) pLysS E. coli cells for expression, then extracted and purified the protein
-At every step, checks were made to ensure the gene was free of mutations and that the right protein was being expressed and extracted.`,
+- For the molecular cloning, mouse RNA was isolated, converted into cDNA with the LDHA gene amplified, cut with NcoI and EcoRI, ligated into a pET11-H6a plasmid vector and then transformed into competent DH5a cells. 
+- Through various screening methods at each step of the cloning process such as Nanodrop readings, gel electrophoresis, Blue-White screening and DNA sequencing, the molecular cloning was deemed a success.
+- Then, the H6-MmLDHA construct was transformed into BL21(DE3) pLysS E. coli cells for expression, then the protein was extracted and purified.
+- To monitor the success of expression, extraction and purification, tests such as monitoring OD600 readings, protein and enzyme assays, SDS-PAGE, Coomassie-Blue staining and Immunoblot were performed.`,
         skills: ["Molecular Cloning", "RT-PCR", "RE Digest and Ligation", "DNA Sequencing", "SDS-PAGE", "Protein Assay"]
       },
       {
@@ -80,7 +80,7 @@ At every step, checks were made to ensure the gene was free of mutations and tha
         period: "2024",
         role: "Undergraduate Student Researcher, Special Programme in Science",
         desc: "I used BioBrick parts and molecular biology techniques to successfully create a genetic circuit that was inserted into E. coli cells to act as a device for us to detect changes in arabinose in the environment.",
-        skills: ["BioBrick assembly", "PCR", "Gel electrophoresis", "Molecular cloning"],
+        skills: ["BioBrick assembly", "PCR", "Gel electrophoresis", "Boolean Logic"],
       },
     ],
   },
@@ -103,7 +103,7 @@ At every step, checks were made to ensure the gene was free of mutations and tha
       },
       {
         title: "Investigation of Different Fragmentation Methods for Drug Database Preparation",
-        period: "June 2022-June 2023",
+        period: "June 2022 - June 2023",
         role: "Student Researcher, Bioinformatics Institute @ ASTAR",
         desc: "description",
         links: [
