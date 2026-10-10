@@ -92,7 +92,7 @@ export const AREAS: Area[] = [
         role: "Student Researcher, Bioinformatics Institute @ ASTAR",
         desc: "description",
         links: [
-          {label: "GitHub", url:"https://github.com/hayleylim05"},{label: "Paper", "url:"https://link.springer.com/chapter/10.1007/978-981-99-8369-8_32?"},
+          {label: "GitHub", url:"https://github.com/hayleylim05"},{label: "Paper", url:"https://link.springer.com/chapter/10.1007/978-981-99-8369-8_32?"},
         ],
         skills: ["Python"],
       },
