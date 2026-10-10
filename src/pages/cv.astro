@@ -1,92 +1,65 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
-import TimeLineElement from "../components/cv/TimeLine.astro";
+import { PROFILE, EDUCATION, EXPERIENCE, SKILLS, ACTIVITIES } from "../data/cv";
+import { CV_PDF } from "../config";
+
+const sections = [
+  { id: "education", eyebrow: "Education", entries: EDUCATION },
+  { id: "experience", eyebrow: "Experience", entries: EXPERIENCE },
+];
 ---
 
-<BaseLayout title="Resume" sideBarActiveItemID="cv">
-  <div class="mb-5">
-    <div class="text-3xl w-full font-bold">Profile</div>
-  </div>
+<BaseLayout title="CV" sideBarActiveItemID="cv">
+  <span class="hw-eyebrow">Curriculum vitae</span>
+  <h1 class="hw-title hw-h1 mt-2">CV</h1>
+  <p class="hw-lead mt-4">{PROFILE}</p>
+  {CV_PDF && (
+    <div class="mt-6">
+      <a href={CV_PDF} target="_blank" class="hw-btn hw-btn-primary">Download CV (PDF)</a>
+    </div>
+  )}
 
-  <div class="mb-10 text-justify">
-    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna
-    aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis
-    aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
-    cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-  </div>
+  {sections.map((s) => (
+    <section class="mt-14">
+      <h2 class="hw-title text-2xl mb-6">{s.eyebrow}</h2>
+      <ol class="relative border-l-2 ml-2" style="border-color: var(--line)">
+        {s.entries.map((e) => (
+          <li class="ml-7 mb-8 last:mb-0 relative">
+            <span class="absolute -left-[37px] top-1.5 w-4 h-4 rounded-full border-4 border-white" style="background: var(--accent); box-shadow: 0 0 0 1px var(--line)"></span>
+            <div class="hw-eyebrow">{e.period}</div>
+            <h3 class="hw-card-title mt-1">{e.title}</h3>
+            <div class="text-sm font-semibold mt-0.5" style="color: var(--muted)">{e.org}</div>
+            {e.subtitle && <div class="text-sm italic mt-2">Project: “{e.subtitle}”</div>}
+            {e.points && (
+              <div class="hw-desc mt-2"><ul>{e.points.map((p) => <li>{p}</li>)}</ul></div>
+            )}
+          </li>
+        ))}
+      </ol>
+    </section>
+  ))}
 
-  <div class="mb-5">
-    <div class="text-3xl w-full font-bold">Education</div>
-  </div>
+  <section class="mt-14">
+    <h2 class="hw-title text-2xl mb-6">Skills</h2>
+    <div class="hw-card">
+      {SKILLS.map((g) => (
+        <div class="flex flex-col sm:flex-row sm:items-center gap-2 py-1">
+          <span class="text-sm font-bold sm:w-56 shrink-0" style="color: var(--ink)">{g.group}</span>
+          <div class="flex flex-wrap gap-2">{g.items.map((i) => <span class="hw-chip">{i}</span>)}</div>
+        </div>
+      ))}
+    </div>
+  </section>
 
-  <div class="time-line-container grid gap-4 mb-10">
-    <TimeLineElement
-      title="Title Name"
-      subtitle="[start year] to [end year] at [Study Center Name], [City], [Country]"
-    />
-    <TimeLineElement
-      title="Title Name"
-      subtitle="[start year] to [end year] at [Study Center Name], [City], [Country]"
-    />
-  </div>
-
-  <div class="mb-5">
-    <div class="text-3xl w-full font-bold">Experience</div>
-  </div>
-
-  <div class="time-line-container mb-10">
-    <TimeLineElement
-      title="Job Title at Project or Company Name"
-      subtitle="From [Start Date] to [End Date] at [Company], [City], [Country]"
-    >
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident.
-    </TimeLineElement>
-    <TimeLineElement
-      title="Job Title at Project or Company Name"
-      subtitle="From [Start Date] to [End Date] at [Company], [City], [Country]"
-    >
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident.
-    </TimeLineElement>
-    <TimeLineElement
-      title="Job Title at Project or Company Name"
-      subtitle="From [Start Date] to [End Date] at [Company], [City], [Country]"
-    >
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident.
-    </TimeLineElement>
-  </div>
-
-  <div class="mb-5">
-    <div class="text-3xl w-full font-bold">Certifications</div>
-  </div>
-
-  <ul class="list-disc mx-6 mb-10 grid gap-2">
-    <li>
-      <a href="#" target="_blank"> Certification Name (with link)</a>
-    </li>
-    <li>
-      <a href="#" target="_blank"> Certification Name (with link)</a>
-    </li>
-  </ul>
-
-  <div class="mb-5">
-    <div class="text-3xl w-full font-bold">Skills</div>
-  </div>
-
-  <ul class="list-disc md:columns-5 columns-2 mx-6">
-    <li>Skill Name</li>
-    <li>Skill Name</li>
-    <li>Skill Name</li>
-    <li>Skill Name</li>
-    <li>Skill Name</li>
-    <li>Skill Name</li>
-    <li>Skill Name</li>
-    <li>Skill Name</li>
-    <li>Skill Name</li>
-    <li>Skill Name</li>
-    <li>Skill Name</li>
-    <li>Skill Name</li>
-    <li>Skill Name</li>
-    <li>Skill Name</li>
-    <li>Skill Name</li>
-  </ul>
+  <section class="mt-14">
+    <h2 class="hw-title text-2xl mb-6">Co-curricular activities</h2>
+    <div class="grid gap-5 md:grid-cols-2">
+      {ACTIVITIES.map((a) => (
+        <div class="hw-card">
+          <div class="hw-card-title">{a.group}</div>
+          <div class="hw-desc"><ul>{a.points.map((p) => <li>{p}</li>)}</ul></div>
+        </div>
+      ))}
+    </div>
+  </section>
 </BaseLayout>

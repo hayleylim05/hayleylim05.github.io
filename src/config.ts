@@ -9,6 +9,10 @@ export const TRANSITION_API = true
 // Your contact links. Leave a value as "" to hide that button/icon.
 export const CONTACT = {
   email: "",          // e.g. "you@example.com"
-  linkedin: "",       // e.g. "https://www.linkedin.com/in/your-name"
+  linkedin: "https://www.linkedin.com/in/hayley-lim-390943170",
   github: "https://github.com/hayleylim05",
 };
+
+// Optional downloadable CV: upload a PDF to public/files/ and put its path here,
+// e.g. "/files/Hayley_Lim_CV.pdf". Leave "" to hide the button.
+export const CV_PDF = "";
