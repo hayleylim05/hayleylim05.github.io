@@ -64,6 +64,7 @@ export const AREAS: Area[] = [
       {
         title: "Building a Biosensor to Detect Changes in Metabolite in the Environment",
         period: "2024",
+        role: "Undergraduate Student Researcher, Special Programme in Science",
         desc: "I used BioBrick parts and molecular biology techniques to successfully create a genetic circuit that was inserted into E. coli cells to act as a device for us to detect changes in arabinose in the environment.",
         skills: ["BioBrick assembly", "PCR", "Gel electrophoresis", "Molecular cloning"],
       },
