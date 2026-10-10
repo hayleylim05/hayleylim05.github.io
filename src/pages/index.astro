@@ -12,7 +12,7 @@ import { CONTACT } from "../config";
         <span class="hw-badge">Undergraduate Researcher · Life Sciences &amp; Philosophy</span>
         <h1 class="hw-title hw-h1 mt-5">Hi, I'm Hayley Lim</h1>
         <p class="hw-lead mt-4 max-w-xl">
-          An aspiring academic working at the meeting point of computational biology and metaphysics.
+          An aspiring academic.
         </p>
         <div class="flex flex-wrap gap-3 mt-7">
           <a href="#areas" class="hw-btn hw-btn-primary">Explore my work</a>
@@ -33,7 +33,7 @@ import { CONTACT } from "../config";
   <section class="hw-section" style="background: var(--card)">
     <div class="hw-container">
       <span class="hw-eyebrow">About me</span>
-      <h2 class="hw-title hw-h2">Science and philosophy, side by side</h2>
+      <h2 class="hw-title hw-h2">Science and Philosophy, side by side</h2>
       <div class="mt-5 max-w-3xl text-[1.02rem] leading-relaxed space-y-4">
         <p>
           I am an Undergraduate Researcher majoring in Life Sciences with a minor in Philosophy. I'm inspired by the
@@ -59,19 +59,4 @@ import { CONTACT } from "../config";
     </div>
   </section>
 
-  <!-- CONTACT CTA -->
-  <section id="contact" class="hw-container pb-16">
-    <div class="hw-cta flex flex-col md:flex-row md:items-center md:justify-between gap-6">
-      <div>
-        <span class="hw-eyebrow">Get in touch</span>
-        <h2 class="text-2xl md:text-3xl font-bold tracking-tight mt-2">Let's connect</h2>
-        <p class="mt-2 opacity-90 max-w-lg">Interested in my research or a possible collaboration? I'd love to hear from you.</p>
-      </div>
-      <div class="flex flex-wrap gap-3">
-        {CONTACT.email && <a href={`mailto:${CONTACT.email}`} class="hw-btn hw-btn-light">Email me</a>}
-        {CONTACT.linkedin && <a href={CONTACT.linkedin} target="_blank" class="hw-btn hw-btn-outline-light">LinkedIn</a>}
-        {CONTACT.github && <a href={CONTACT.github} target="_blank" class="hw-btn hw-btn-outline-light">GitHub</a>}
-      </div>
-    </div>
-  </section>
 </BaseLayout>
