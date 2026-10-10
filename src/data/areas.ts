@@ -55,6 +55,13 @@ export const AREAS: Area[] = [
         skills: ["Technique 1", "Technique 2"],
       },
       {
+        title: "Molecular Cloning of LDHA and Expression of H6-MmLDHA Protein",
+        period: "2025",
+        role: "Undergraduate Student Researcher, Department of Microbiology, Yong Loo Lin School of Medicine",
+        desc: "I used Mouse RNA to undergo molecular cloning of LDHA gene, followed by the expression of the LDHA protein. Mouse RNA was isolated, converted into cDNA, with the LDHA gene amplified. The gene was then cut with restriction enzymes and ligated into a pET11-H6a plasmid vector and then transformed into competent DH5a cells for screening. For expression, the H6-MmLDHA gene was transformed into BL21(DE3) pLysS E. coli cells. The protein was extracted and then undergone purification. At every step of the way, checks were made to ensure that the gene is void of any mutations and the right protein is being expressed and extracted.",
+        skills: ["Molecular Cloning", "RT-PCR", "RE Digest and Ligation", "DNA Sequencing", "SDS-PAGE", "Protein Assay"]
+      },
+      {
         title: "Building a Biosensor to Detect Changes in Metabolite in the Environment",
         period: "2024",
         desc: "I used BioBrick parts and molecular biology techniques to successfully create a genetic circuit that was inserted into E. coli cells to act as a device for us to detect changes in arabinose in the environment.",
